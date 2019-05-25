@@ -1,2 +1,2 @@
 # ProceduralIslandGeneration
-Procedural island generation script to be written for Unity
+Procedural island generation script written for Unity
