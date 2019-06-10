@@ -127,7 +127,7 @@ public class MapGenerator : MonoBehaviour {
 
 		foreach (List<Coord> wallRegion in wallRegions) {
 			if (wallRegion.Count > 10000){
-				RoundTheIsland (wallRegion);
+				//RoundTheIsland (wallRegion);
 			}
 			if (wallRegion.Count < wallThresholdSize) {
 				foreach (Coord tile in wallRegion) {
@@ -375,23 +375,25 @@ public class MapGenerator : MonoBehaviour {
 					// following to generate a random number between 0 and 100. if the number is smaller than the 'randomFillPercent' map[x,y] = 1 , else map[x,y] = 0
 					int random = pseudoRandom.Next (0, 100);
 					map[x,y] = (random < randomFillPercent) ? 1 : 0;
-					if (x > width - 150 && y > height - 150 ) {
-						if (random > 95 && map [x, y] == 0) {
+					if (x > width - 100){
+						if (random > 93 && map [x, y] == 0) {
 							map [x, y] = 1;
 						}
-					} else if (x < 150 && y < 100){
-						if (random > 95 && map [x, y] == 0) {
-							map [x, y] = 1;
-						}
-					} else if (x > width - 150 && y < 100){
-						if (random > 92 && map [x, y] == 0) {
-							map [x, y] = 1;
-						}
-					} else if (x < 100 && y > height - 150){
-						if (random > 92 && map [x, y] == 0) {
+					} else if (y > height - 100){
+						if (random > 94 && map [x, y] == 0) {
 							map [x, y] = 1;
 						}
 					}
+					else if (x > width - 130 && y > height - 130 ) {
+						if (random > 75 && map [x, y] == 0) {
+							map [x, y] = 1;
+						}
+					} 
+					else if (x < 130 && y < 100){
+						if (random > 95 && map [x, y] == 0) {
+							map [x, y] = 1;
+						}
+					} 
 			
 					temp.Add(random);
 

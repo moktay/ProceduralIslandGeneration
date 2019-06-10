@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GenerationScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MapGenerator.cs">
     <Files>
-      <File FileName="Assets/Scripts/MapGenerator.cs" Line="202" Column="114" />
-      <File FileName="Assets/Scripts/GenerationScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MapGenerator.cs" Line="127" Column="3" />
+      <File FileName="Assets/Scripts/GenerationScreen.cs" Line="51" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
