@@ -95,7 +95,7 @@ public class MapGenerator : MonoBehaviour {
 		randomList = RandomFillMap (seed);
 
 
-		for (int i = 0; i < 3; i ++){
+		for (int i = 0; i < 4; i ++){
 			SmoothMap();
 		}
 
@@ -123,12 +123,9 @@ public class MapGenerator : MonoBehaviour {
 
 		int lakeThresholdSize = 200;
 		int seaThresholdSize = 3000;
-		int wallThresholdSize = 300;
+		int wallThresholdSize = 400;
 
 		foreach (List<Coord> wallRegion in wallRegions) {
-			if (wallRegion.Count > 10000){
-				//RoundTheIsland (wallRegion);
-			}
 			if (wallRegion.Count < wallThresholdSize) {
 				foreach (Coord tile in wallRegion) {
 					map [tile.tileX, tile.tileY] = 1;
@@ -159,42 +156,6 @@ public class MapGenerator : MonoBehaviour {
 
 	}
 
-
-	// the following method improves the island shape to a further natural one. The island shape needs to be improved in new versions.
-	void RoundTheIsland(List<Coord> island){
-		int xMin = 0;
-		int yMin = 0;
-		int xMax = 0;
-		int yMax = 0;
-		foreach (var i in island) {
-			if (xMin == 0 || i.tileX < xMin) {
-				xMin = i.tileX;
-			} if (yMin == 0 || i.tileY < yMin) {
-				yMin = i.tileY;
-			} if (xMax == 0 || i.tileX > xMax) {
-				xMax = i.tileX;
-			} if (yMax == 0 || i.tileY > yMax) {
-				yMax = i.tileY;
-			}
-		}
-
-
-		int g =0;
-
-		foreach (var i in island) {
-			if ((i.tileX < xMin + 40 && i.tileY < yMin + 30) || (i.tileX < xMin + 50 && i.tileY > yMax - 40) || (i.tileX > xMax - 50 && i.tileY < yMin + 40) || (i.tileX > xMax - 40 && i.tileY > yMax - 30)) {
-				if (randomList [g] > 40) {
-					map [i.tileX, i.tileY] = 1;
-				}
-				g++;
-			}
-
-		}
-
-		SmoothMap();
-
-
-	}
 
 
 
